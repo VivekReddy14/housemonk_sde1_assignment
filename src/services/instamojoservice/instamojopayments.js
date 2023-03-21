@@ -1,6 +1,6 @@
 // Initialising Instamojo client connection
 
-let Instamojo = require('Instamojo-nodejs');
+let Instamojo = require('instamojo-nodejs');
 
 const { Instamojokeys } = require('../../config/secrets')
 
