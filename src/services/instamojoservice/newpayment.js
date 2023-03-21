@@ -1,6 +1,6 @@
 // API to create new payment request
 
-const Instamojo = require('./Instamojopayments')
+const Instamojo = require('./instamojopayments')
 const invoicedbqueries = require('../../helpers/invoicedbqueries');
 
 const { webhookbaseurl, redirecturl } = require('../../config/urlconfigs');

@@ -1,7 +1,7 @@
 // API to create new refund request
 
 
-const Instamojo = require('./Instamojopayments')
+const Instamojo = require('./instamojopayments')
 const invoicedbqueries = require('../../helpers/invoicedbqueries');
 
 const refundrequest = async(res, payment_id, type, body, amount) => {
