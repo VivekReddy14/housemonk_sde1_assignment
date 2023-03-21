@@ -29,14 +29,15 @@ const newpayment = async(paymentdata, invoiceid, res) => {
                 res.status(500).send(response);
             } 
             else{
-                // Updating paymentid in our database and marking the payment link generated flag to true 
+                // Updating paymentrequestid in our database and marking the payment link generated flag to true 
                 const resp = await invoicedbqueries.updateinvoice(invoiceid, {
                     ispaymentlinkgenerated : true,
                     paymentmeta : {
-                        payment_id : response.payment_request.id,
+                        payment_requestid : response.payment_request.id,
                         paymentlink : response.payment_request.longurl
                     } 
                 })
+                console.log(response);
                 res.send(response);
             }
         }

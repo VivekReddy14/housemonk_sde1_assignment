@@ -17,4 +17,8 @@ request.post("/imwebhook", async(req,res)=>{
     await paymentController.imwebhook(req, res);
 })
 
+request.post("/initiateRefund", async(req,res) => {
+    await paymentController.initiateRefund(req, res);
+})
+
 module.exports = request;

@@ -16,9 +16,16 @@ paymentController.newpaymentrequest = async(req,res) => {
 // Webhook to change status of payment
 paymentController.imwebhook = async(req,res) => {
     try{
-        console.log(req.body);
         const response = await paymenthelper.imwebhook(req.body);
         res.send({...response, success:true});
+    } catch(e){
+        res.status(500).send({...e, success: false});
+    }
+}
+
+paymentController.initiateRefund = async(req,res) => {
+    try{
+        const response = await paymenthelper.initiateRefund(req.body, res);
     } catch(e){
         res.status(500).send({...e, success: false});
     }
